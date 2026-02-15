@@ -20,7 +20,7 @@ NOTE (Please, make sure you have installed python 3 )
 
 
 
-<a href="https://ipstress.st"><img src="https://github.com/user-attachments/assets/b43bc8f7-c17f-478b-808a-c431dc5a6743" width="728" height="90" alt="aeza"></a>
+<a href="https://ipstress.st"><img src="https://github.com/mr-ninetynine/killer/blob/main/killer.png" width="728" height="90" alt="aeza"></a>
 
 
 
