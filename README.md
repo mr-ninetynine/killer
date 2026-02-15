@@ -31,10 +31,8 @@ To use the application, type in the following commands in GNU/Linux terminal.
 
 $ sudo apt install git
 </br>
-$ git clone https://github.com/palahsu/DDoS-Ripper.git
+$ sudo git clone https://github.com/mr-ninetynine/killer.git
 </br>
-$ cd DDoS-Ripper
+$ cd killer
 </br>
-$ ls
-</br>
-$ python3 DRipper.py OR python2 DRipper.py
+$ python3 ddos_killer.py [site-url] -t 1000 -p proxylist.txt
